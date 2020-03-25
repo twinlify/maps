@@ -1,28 +1,27 @@
 import React, {useEffect, useState} from 'react';
 
-const fetchConfig = async id => {
-  const url = `https://connections.ptgem.com/nimbus/${id}`;
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+const addScript = (src, next) => {
+  const s = document.createElement('script');
+  s.setAttribute('src', src);
+  s.async = true;
+
+  document.body.appendChild(s);
+  s.onload = next;
 };
 
 const MapPage = () => {
-  const [config, setConfig] = useState(null);
-
   useEffect(() => {
     const [, id] = document.URL.split('/map/');
 
-    fetchConfig(id).then(config => {
-      setConfig(config);
+    addScript('https://static.ptgem.com/apps/nexus-0.0.4.min.js', () => {
+      window.Nexus.create({
+        container: 'nexus',
+        config: `https://connections.ptgem.com/nimbus/${id}`
+      });
     });
   }, []);
 
-  return config ? (
-    <p>map for {JSON.stringify(config, null, 2)}</p>
-  ) : (
-    <p>loading config...</p>
-  );
+  return <div id="nexus"></div>;
 };
 
 export default MapPage;
