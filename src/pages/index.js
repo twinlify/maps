@@ -1,8 +1,9 @@
 import React from 'react';
+import {useStaticQuery, graphql} from 'gatsby';
 
 import DemoCard from '../components/demo-card';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Header from '../components/header';
 
 const demos = [
   {
@@ -23,12 +24,23 @@ const Demos = () => (
   </div>
 );
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Maps" keywords={[`gatsby`, `maps`, `ptgem`]} />
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
 
-    <Demos />
-  </Layout>
-);
+  return (
+    <Layout>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Demos />
+    </Layout>
+  );
+};
 
 export default IndexPage;
