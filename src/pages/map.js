@@ -27,10 +27,10 @@ const NexusWrapper = styled(_NexusWrapper)`
 
 const MapPage = () => {
   useEffect(() => {
-    const [, id] = document.URL.split('/map/');
+    const [, id] = document.URL.split('/map/?id=');
 
-    addExternalCss('https://static.ptgem.com/apps/nexus-0.0.4.css');
-    addScript('https://static.ptgem.com/apps/nexus-0.0.4.min.js', () => {
+    addExternalCss('https://static.ptgem.com/apps/nexus-0.0.5.css');
+    addScript('https://static.ptgem.com/apps/nexus-0.0.5.min.js', () => {
       window.Nexus.create({
         container: 'nexus',
         config: `https://connections.ptgem.com/nimbus/${id}`

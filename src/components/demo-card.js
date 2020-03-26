@@ -4,7 +4,7 @@ import React from 'react';
 
 const DemoCard = ({name, config}) => (
   <div>
-    <Link to={`/map/${config}`}>{name}</Link>
+    <Link to={`/map/?id=${config}`}>{name}</Link>
   </div>
 );
 
