@@ -21,7 +21,7 @@ const addScript = (src, next) => {
 const _NexusWrapper = ({className}) => <div id="nexus" className={className} />;
 const NexusWrapper = styled(_NexusWrapper)`
   background-color: #123;
-  color: '#eee';
+  color: #eee;
   height: 100vh;
 `;
 
