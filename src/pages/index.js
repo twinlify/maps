@@ -5,16 +5,7 @@ import DemoCard from '../components/demo-card';
 import Layout from '../components/layout';
 import Header from '../components/header';
 
-const demos = [
-  {
-    name: 'Nice Tramway',
-    config: 'nice.stations'
-  },
-  {
-    name: 'Vitry pipes',
-    config: 'vitry.config'
-  }
-];
+const demos = [];
 
 const Demos = () => (
   <div>
