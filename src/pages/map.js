@@ -29,8 +29,8 @@ const MapPage = () => {
   useEffect(() => {
     const [, id] = document.URL.split('/map/?id=');
 
-    addExternalCss('https://static.ptgem.com/apps/nexus-0.0.12.css');
-    addScript('https://static.ptgem.com/apps/nexus-0.0.12.min.js', () => {
+    addExternalCss('https://static.ptgem.com/apps/nexus-0.0.13.css');
+    addScript('https://static.ptgem.com/apps/nexus-0.0.13.min.js', () => {
       window.Nexus.create({
         container: 'nexus',
         config: `https://connections.ptgem.com/nimbus/${id}`
