@@ -25,17 +25,22 @@ const NexusWrapper = styled(_NexusWrapper)`
   height: 100vh;
 `;
 
+const NEXUS_VERSION = '0.0.20';
+
 const MapPage = () => {
   useEffect(() => {
     const [, id] = document.URL.split('/map/?id=');
 
-    addExternalCss('https://static.ptgem.com/apps/nexus-0.0.19.css');
-    addScript('https://static.ptgem.com/apps/nexus-0.0.19.min.js', () => {
-      window.Nexus.create({
-        container: 'nexus',
-        config: `https://connections.ptgem.com/nimbus/${id}`
-      });
-    });
+    addExternalCss(`https://static.ptgem.com/apps/nexus-${NEXUS_VERSION}.css`);
+    addScript(
+      `https://static.ptgem.com/apps/nexus-${NEXUS_VERSION}.min.js`,
+      () => {
+        window.Nexus.create({
+          container: 'nexus',
+          config: `https://connections.ptgem.com/nimbus/${id}`
+        });
+      }
+    );
   }, []);
 
   return <NexusWrapper />;
