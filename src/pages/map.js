@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Layout from '../components/layout';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 
 const addExternalCss = src => {
