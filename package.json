@@ -1,5 +1,5 @@
 {
-  "name": "@ptgem-io/maps",
+  "name": "@twinlify/maps",
   "description": "Demo maps with Nexus",
   "version": "0.1.0",
   "dependencies": {
@@ -35,9 +35,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/twinlify/maps"
   }
 }
