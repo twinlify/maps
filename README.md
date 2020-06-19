@@ -12,7 +12,7 @@
 Built with Gatsby
 </h3>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1c810962-3554-4208-a2a3-49e933d50c1f/deploy-status)](https://app.netlify.com/sites/maps-ptgem/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8354891-7f1d-4408-9cdb-0312385960d7/deploy-status)](https://app.netlify.com/sites/maps-twinlify/deploys)
 
 ## 🛠 Credits
 
