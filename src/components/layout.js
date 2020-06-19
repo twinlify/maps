@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import SEO from './seo';
-import './layout.css';
 
 const Layout = ({children}) => (
   <>
