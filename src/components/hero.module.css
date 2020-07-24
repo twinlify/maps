@@ -1,0 +1,70 @@
+@value breakpoints "../style/breakpoints.css";
+@value mobile, tablet from breakpoints;
+
+@value colors "../style/colors.css";
+@value font "../style/font.css";
+@value dark from colors;
+@value FONT_FAMILY from font;
+
+.hero {
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: dark;
+  opacity: 0.65;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content {
+  color: white;
+  height: 100%;
+  padding: 0 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.title {
+  font-size: 65px;
+}
+
+.links {
+  margin: 0;
+  color: dark;
+}
+
+.punchLine {
+  font-size: 25px;
+}
+
+@media mobile {
+  .content {
+    padding: 0 60px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .punchLine {
+    font-size: 18px;
+  }
+}

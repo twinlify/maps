@@ -1,37 +1,41 @@
 import React from 'react';
-import {useStaticQuery, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 
-import DemoCard from '../components/demo-card';
+import Hero from '../components/hero';
+import Highlights from '../components/highlights';
 import Layout from '../components/layout';
-import Header from '../components/header';
+import SEO from '../components/seo';
 
-const demos = [];
-
-const Demos = () => (
-  <div>
-    {demos.map(demo => (
-      <DemoCard {...demo} />
-    ))}
-  </div>
-);
-
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+const IndexPage = ({data}) => {
+  const highlights = data.allHighlightsYaml.edges.map(
+    edge => edge.node.highlight
+  );
 
   return (
     <Layout>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Demos />
+      <SEO title="Twinlify" keywords={[`maps`, `3d`, `IoT`]} />
+      <Hero />
+      <Highlights highlights={highlights} />
     </Layout>
   );
 };
+
+export const query = graphql`
+  query {
+    allHighlightsYaml {
+      edges {
+        node {
+          highlight {
+            id
+            title
+            description
+            details
+            image
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;

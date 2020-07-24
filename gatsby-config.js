@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `PTGEM demo`,
-    description: `PTGEM demonstrations with Nexus`,
+    title: `Twinlify`,
+    description: `Twinlify websites and demos`,
     author: `@chrisdugne`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,14 +18,17 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `maps.ptgem.com`,
-        short_name: `maps`,
+        name: `twinlify.com`,
+        short_name: `www`,
         start_url: `/`,
         background_color: `#47b23b`,
         theme_color: `#47b23b`,
