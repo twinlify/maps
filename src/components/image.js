@@ -1,32 +1,40 @@
 import React from 'react';
-import {useStaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
+import defaultStyle from './image.module.css';
+import {Images} from './images-provider';
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: {eq: "gatsby-astronaut.png"}) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+const Image = ({
+  imageClassName,
+  wrapperClassName,
+  wrapperStyle = {},
+  style = {position: 'unset'},
+  projectId,
+  assetId
+}) => (
+  <div
+    className={wrapperClassName || defaultStyle.imageWrap}
+    style={wrapperStyle}
+  >
+    <Images.Consumer>
+      {images => {
+        console.log(images);
+        if (!images[projectId]) {
+          throw new Error(`missing images for project ${projectId}`);
         }
-      }
-    }
-  `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
-};
+        if (!images[projectId][assetId]) {
+          throw new Error(`missing image ${assetId} for project ${projectId}`);
+        }
+        return (
+          <Img
+            style={style}
+            className={imageClassName}
+            fluid={images[projectId][assetId]}
+          />
+        );
+      }}
+    </Images.Consumer>
+  </div>
+);
 
 export default Image;

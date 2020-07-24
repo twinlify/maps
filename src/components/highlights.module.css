@@ -1,0 +1,131 @@
+@value breakpoints "../style/breakpoints.css";
+@value mobile, tablet from breakpoints;
+@value colors "../style/colors.css";
+@value dark from colors;
+
+.highlights {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.post {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: #ededed;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 2px 1px 2px rgba(0, 0, 0, 0.24);
+  height: 450px;
+  overflow: hidden;
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.postReversed {
+  composes: post;
+  flex-direction: row-reverse;
+}
+
+@media tablet {
+  .post {
+    max-width: 900px;
+    flex-direction: column;
+  }
+}
+.post:first-child {
+  margin-top: 0;
+}
+
+.imageWrap {
+  flex: 1;
+  height: 100%;
+  padding-bottom: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s ease-out;
+}
+
+.image:hover {
+  transform: translateX(-10%) translateY(-10%);
+  width: 120%;
+  height: 120%;
+}
+
+.contentWrap {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.content {
+  background: #fff;
+  width: 100%;
+  margin-left: -30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 30px;
+}
+
+@media tablet {
+  .post {
+    height: 700px;
+  }
+
+  .imageWrap {
+    width: 100%;
+  }
+
+  .contentWrap {
+    width: 100%;
+  }
+
+  .content {
+    margin: 0;
+    margin-top: -20px;
+    width: 90%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+}
+
+/* ------------------------------------------- */
+
+.link {
+  composes: link from '../style/link.css';
+}
+
+.postReversed .content {
+  margin-left: 30px;
+}
+
+.title {
+  font-size: 36px;
+  color: dark;
+}
+
+.description {
+  font-size: 21px;
+}
+
+.list {
+}
+
+.line {
+}
