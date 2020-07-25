@@ -1,18 +1,11 @@
 - highlight:
-    id: freelance
-    title: Freelance
-    description: Bringing my web and mobile expertise to boost your team.
-    image: freelance
-    details:
-      - Expert at building large scale interactive websites and applications.
-      - Expert knowledge of mobile development.
+    id: lightweight3d
+    title: Lightweight 3D
+    description: Our 3D mapping solution gives you the visual insights you need to make informed decisions.
+    image: lightweight
+
 - highlight:
-    id: studio
-    title: Game studio
-    description: 'Mobile games for your company:'
-    image: gamestudio
-    details:
-      - Analysing with you to provide the best gameplay for your business.
-      - Deploying on Apple and Google stores.
-      - Scaling up your data and backend services on AWS.
-      - Iterating your UX using Google Analytics.
+    id: digitaltwin
+    title: A digital twin
+    description: By looking at a digital twin of your sites and assets, things are contextualized, easier to understand, and more effective to communicate.
+    image: digitaltwin

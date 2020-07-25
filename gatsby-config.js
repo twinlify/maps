@@ -1,8 +1,25 @@
 module.exports = {
   siteMetadata: {
     title: `Twinlify`,
-    description: `Twinlify websites and demos`,
-    author: `@chrisdugne`
+    description: `The 3D geolocated visualization for your IoT`,
+    author: `@chrisdugne`,
+    keywords: [
+      '3d',
+      'cloud',
+      'embed',
+      'embeddable',
+      'geolocalisation',
+      'geolocalization',
+      'iot',
+      'lightweight',
+      'mapbox',
+      'maps',
+      'modern',
+      'saas',
+      'threejs',
+      'visualisation',
+      'visualization'
+    ]
   },
   plugins: [
     {
