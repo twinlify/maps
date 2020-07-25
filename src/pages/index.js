@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 
+import Demos from '../components/demos';
 import Hero from '../components/hero';
 import Highlights from '../components/highlights';
 import Layout from '../components/layout';
@@ -11,17 +12,35 @@ const IndexPage = ({data}) => {
     edge => edge.node.highlight
   );
 
+  const demos = data.allDemosYaml.edges.map(edge => edge.node.demo);
+
+  const heroContent = data.heroYaml;
+
   return (
     <Layout>
-      <SEO title="Twinlify" keywords={[`maps`, `3d`, `IoT`]} />
-      <Hero />
+      <SEO title="Twinlify" />
+      <Hero content={heroContent} />
       <Highlights highlights={highlights} />
+      <Demos demos={demos} />
     </Layout>
   );
 };
 
 export const query = graphql`
   query {
+    allDemosYaml {
+      edges {
+        node {
+          demo {
+            id
+            title
+            description
+            image
+            url
+          }
+        }
+      }
+    }
     allHighlightsYaml {
       edges {
         node {
@@ -29,11 +48,13 @@ export const query = graphql`
             id
             title
             description
-            details
             image
           }
         }
       }
+    }
+    heroYaml {
+      description
     }
   }
 `;

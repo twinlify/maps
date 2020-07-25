@@ -5,7 +5,13 @@ import style from './footer.module.css';
 const Footer = ({siteTitle}) => (
   <footer className={style.footer}>
     <p className={style.texts}>
-      <span>Twinlify © {new Date().getFullYear()}</span>
+      <span
+        className={style.contact}
+        onClick={() => window.open('mailto:contact@twinlify.com', '_self')}
+      >
+        contact us
+      </span>
+      <h5>Twinlify © {new Date().getFullYear()}</h5>
     </p>
     {/* <SocialLinks className={style.links} /> */}
   </footer>
