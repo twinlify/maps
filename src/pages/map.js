@@ -36,7 +36,7 @@ const MapPage = () => {
       () => {
         window.Nexus.create({
           container: 'nexus',
-          config: `https://connections.ptgem.com/nimbus/${id}`
+          config: `https://connections.ptgem.com/nimbus/${id}?t=${new Date().getTime()}`
         });
       }
     );
