@@ -28,7 +28,10 @@ const NEXUS_VERSION = '0.0.32';
 
 const MapPage = () => {
   useEffect(() => {
-    const [, id] = document.URL.split('/map/?id=');
+    const [, query] = document.URL.split('/map/?');
+    const searchParams = new URLSearchParams(query);
+    const id = searchParams.get('id') || 'westgate.demo';
+    const lang = searchParams.get('lang') || 'en';
 
     addExternalCss(`https://static.ptgem.com/apps/nexus-${NEXUS_VERSION}.css`);
     addScript(
@@ -36,6 +39,7 @@ const MapPage = () => {
       () => {
         window.Nexus.create({
           container: 'nexus',
+          lang,
           config: `https://connections.ptgem.com/nimbus/${id}?t=${new Date().getTime()}`
         });
       }
