@@ -24,7 +24,7 @@ const NexusWrapper = styled(_NexusWrapper)`
   height: 100vh;
 `;
 
-const NEXUS_VERSION = '0.1.3';
+const NEXUS_VERSION = '0.2.0';
 
 const MapPage = () => {
   useEffect(() => {
@@ -39,8 +39,10 @@ const MapPage = () => {
       () => {
         window.Nexus.create({
           container: 'nexus',
-          lang,
-          config: `https://connections.ptgem.com/nimbus/${id}?t=${new Date().getTime()}`
+          clientId: 'twinlify',
+          connectionsUrl: 'https://connections.twinlify.com',
+          configId: id,
+          lang
         });
       }
     );
