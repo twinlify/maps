@@ -30,12 +30,14 @@ const MapPage = () => {
   useEffect(() => {
     const [, query] = document.URL.split('/map/?');
     const searchParams = new URLSearchParams(query);
-    const id = searchParams.get('id') || 'westgate.demo';
+    const id = searchParams.get('id') || 'westgate';
     const lang = searchParams.get('lang') || 'en';
 
-    addExternalCss(`https://static.ptgem.com/apps/nexus-${NEXUS_VERSION}.css`);
+    addExternalCss(
+      `https://static.twinlify.com/apps/nexus-${NEXUS_VERSION}.css`
+    );
     addScript(
-      `https://static.ptgem.com/apps/nexus-${NEXUS_VERSION}.min.js`,
+      `https://static.twinlify.com/apps/nexus-${NEXUS_VERSION}.min.js`,
       () => {
         window.Nexus.create({
           container: 'nexus',

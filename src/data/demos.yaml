@@ -1,20 +1,13 @@
-# - demo:
-#     id: nice
-#     title: Nice
-#     description: Tram station
-#     image: nice-jean-medecin
-#     url: /map/?id=nice.jean-medecin
-
 - demo:
     id: westgate
     title: Buildings
     description: Supervise a level
     image: westgate
-    url: /map/?id=westgate.demo
+    url: /map/?id=westgate
 
 - demo:
     id: ocean
     title: Ocean
     description: A boat near Japan
     image: boat
-    url: /map/?id=ocean.config
+    url: /map/?id=ocean
