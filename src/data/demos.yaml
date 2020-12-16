@@ -1,9 +1,9 @@
 - demo:
-    id: westgate
+    id: rooms
     title: Buildings
     description: Supervise a level
-    image: westgate
-    url: /map/?id=westgate
+    image: rooms
+    url: /map/?id=rooms
 
 - demo:
     id: ocean
