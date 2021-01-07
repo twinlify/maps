@@ -24,7 +24,7 @@ const NexusWrapper = styled(_NexusWrapper)`
   height: 100vh;
 `;
 
-const NEXUS_VERSION = '0.2.9';
+const NEXUS_VERSION = '0.2.11';
 
 const MapPage = () => {
   useEffect(() => {
