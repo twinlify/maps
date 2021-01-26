@@ -24,7 +24,7 @@ const NexusWrapper = styled(_NexusWrapper)`
   height: 100vh;
 `;
 
-const NEXUS_VERSION = '0.4.2';
+const NEXUS_VERSION = '0.4.3';
 
 const MapPage = () => {
   useEffect(() => {
@@ -40,9 +40,8 @@ const MapPage = () => {
       `https://static.twinlify.com/apps/nexus-${NEXUS_VERSION}.min.js`,
       () => {
         window.Nexus.create({
-          container: 'nexus',
+          containerId: 'nexus',
           clientId: 'twinlify',
-          connectionsUrl: 'https://connections.twinlify.com',
           configId: id,
           lang
         });
