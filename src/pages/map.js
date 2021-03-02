@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 
-const addExternalCss = src => {
+const addExternalCss = (src) => {
   const l = document.createElement('link');
   l.setAttribute('rel', 'stylesheet');
   l.setAttribute('href', src);
@@ -24,7 +24,7 @@ const NexusWrapper = styled(_NexusWrapper)`
   height: 100vh;
 `;
 
-const NEXUS_VERSION = '0.6.3';
+const NEXUS_VERSION = '0.7.2';
 
 const MapPage = () => {
   useEffect(() => {
@@ -43,7 +43,7 @@ const MapPage = () => {
           containerId: 'nexus',
           clientId: 'twinlify',
           configId: id,
-          lang
+          lang,
         });
       }
     );
