@@ -10,7 +10,8 @@
   height: 450px;
   position: relative;
   overflow: hidden;
-  margin-bottom: -100px;
+  padding-top: 50px;
+  margin-bottom: -50px;
 }
 
 .heroOverlay {
@@ -55,6 +56,11 @@
   font-size: 25px;
 }
 
+.logo {
+  height: 300px;
+  width: 300px;
+}
+
 @media mobile {
   .content {
     padding: 0 60px;
@@ -68,3 +74,4 @@
     font-size: 18px;
   }
 }
+
