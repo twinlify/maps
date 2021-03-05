@@ -39,7 +39,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: -50px;
 }
 
@@ -55,15 +55,12 @@
 .logo {
   height: 300px;
   width: 300px;
+  transform: scale(1);
 }
 
 @media mobile {
   .content {
     padding: 0 60px;
-  }
-
-  .title {
-    font-size: 35px;
   }
 
   .punchLine {
