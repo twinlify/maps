@@ -10,7 +10,8 @@
   height: 450px;
   position: relative;
   overflow: hidden;
-  margin-bottom: -100px;
+  padding-top: 50px;
+  margin-bottom: -50px;
 }
 
 .heroOverlay {
@@ -38,12 +39,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: -50px;
-}
-
-.title {
-  font-size: 65px;
 }
 
 .links {
@@ -55,16 +52,19 @@
   font-size: 25px;
 }
 
+.logo {
+  height: 300px;
+  width: 300px;
+  transform: scale(1);
+}
+
 @media mobile {
   .content {
     padding: 0 60px;
-  }
-
-  .title {
-    font-size: 35px;
   }
 
   .punchLine {
     font-size: 18px;
   }
 }
+

@@ -11,7 +11,7 @@ const Hero = ({content}) => {
       <Image wrapperClassName={style.image} projectId="global" assetId="hero" />
       <div className={style.heroOverlay} />
       <div className={style.content}>
-        <h1 className={style.title}>Twinlify</h1>
+        <Image wrapperClassName={style.logo} projectId="global" assetId="logo"/>
         <p className={style.punchLine}>{description}</p>
       </div>
     </div>
